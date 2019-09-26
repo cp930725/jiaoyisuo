@@ -1,0 +1,118 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.login{
+	width: 100%;
+	height: auto;
+	background: url(../images/login_bg.png) no-repeat;    filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+   -moz-background-size:100% 100%;
+    background-size:100% 100%;
+}
+.login-top{
+	width: 100%;
+	height: 40px;
+	box-sizing: border-box;
+	padding: 20px 0 0 20px;
+}
+.login-top a{
+	color: #fff
+}
+.login-logo{
+	width: 100%;
+	height: 80px;
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff
+}
+form{
+	width: 100%;
+	height: auto;
+}
+.login-username{
+	width: 70%;
+	height: 40px;
+	border-bottom: 1px #bd1c21 solid;
+	margin-left: 15%;
+	display: flex;
+	margin-top: 50px;
+	position: relative;
+}
+.login-username i{
+	margin-top: 22px;
+	color: #fff
+}
+.login-username input{
+	width: 100%;
+	height: 30px;
+	margin-top: 10px;
+	border:none;
+	background-color: transparent;
+	color: #fff;
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+.login-username p{
+	position: absolute;
+	right: 0;
+	bottom: -20px;
+	font-size: 14px;
+	color: #fff;
+}
+input:focus{
+	outline:none!important;
+}
+.login-password{
+	width: 70%;
+	height: 40px;
+	border-bottom: 1px #bd1c21 solid;
+	margin-left: 15%;
+	display: flex;
+	margin-top: 20px;
+}
+.login-password i{
+	margin-top: 24px;
+	color: #fff
+}
+.login-password input{
+	width: 100%;
+	height: 30px;
+	margin-top: 10px;
+	border:none;
+	background-color: transparent;
+	color: #fff;
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+.login-btn{
+	width: 70%;
+	height: 30px;
+	margin:0 auto;
+	margin-top: 30px;
+}
+.login-btn button{
+	width: 100%;
+	height: 30px;
+	border:none;
+	background-color: #bd1c21;
+	border-radius: 5px;
+	color:#fff;
+}
+button:focus{
+	outline:none!important;
+}
+.zhuc{
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+
+}
+.zhuc a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;	
+}

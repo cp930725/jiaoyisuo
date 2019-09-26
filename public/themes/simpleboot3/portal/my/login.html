@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>登陆</title>
+	<link href="__TMPL__/public/css/login.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	<script type="text/javascript" src="__TMPL__/public/js/login.js"></script>
+	<script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<div class="login">
+		<div class="login-top">
+			<a href="#" onclick="javascript:history.back(-1);"><i class="fa fa-chevron-circle-left fa-lg"></i></a>
+		</div>
+		<div class="login-logo">
+			<h2>登陆界面</h2>
+		</div>
+		<form>
+			<div class="login-username">
+				<i class="fa fa-user fa-lg"></i>&nbsp;
+				<input type="number" name="" placeholder="请输入手机号">
+				<p></p>
+			</div>
+			<div class="login-password">
+				<i class="fa fa-lock fa-lg"></i>&nbsp;
+				<input type="password" name="" placeholder="请输入密码">
+			</div>
+			<input type="hidden" name="type" value="1"><!--新添加-->
+			<div class="login-btn">
+				<button>登&nbsp;&nbsp;陆</button>
+			</div>
+		</form>
+		<div class="zhuc">
+			<a href="#">忘记密码</a>
+			<a href="register.html">注册账号</a>
+		</div>
+	</div>
+	<script>
+	    $(function() {
+	        var height = $(window).height();
+	        $('div.login').height(height + 'px');
+	    });
+    </script>
+</body>
+</html>

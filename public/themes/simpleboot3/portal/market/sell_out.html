@@ -1,0 +1,44 @@
+<title>卖出</title>
+<link rel="stylesheet" href="__TMPL__/public/css/sell-out.css">
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<div class="con-top">
+    <div class="top-left">
+        <input type="text" name="" placeholder="卖出价格">
+        <p>≈0.00cny</p>
+        <input type="text" name="" placeholder="卖出数量">
+        <p>交易额≈0.00cny</p>
+        <button style="background-color: #41d092">卖出{$currency.currency_mark}</button>
+    </div>
+    <div class="top-right">
+        <div class="right-title"><p>价格({$currency.ct_mark?$currency.ct_mark:'CNY'})</p><p>数量({$currency.currency_mark})</p></div><!--价格为交易工具，数量为交易商品-->
+        <iframe id="deta" src="{:url('market/deta',array('currency_id'=>$currency['currency_id']))}" width="100%" height="158px" style="border: none;"></iframe>  
+    </div>
+</div>
+<div class="con-bottom">
+    <div class="bottom-left">
+        <ul>
+            <li>最大可用{$currency.ct_mark?$currency.ct_mark:'CNY'}：<span>{$number.num}</span></li>
+            <li>最大可卖{$currency.currency_mark}：<span>0.00</span></li>
+            <li>冻结{$currency.ct_mark?$currency.ct_mark:'CNY'}：<span>{$number.forzen_num}</span></li>
+            <li>最大可用{$currency.currency_mark}：<span>0</span></li>
+        </ul>
+    </div>
+    <div class="buttom-right">
+        <h4 style="color: #ec1e44;">70000.00</h4>
+        <div class="right-title"><p>≈70000.00cny</p></div>
+        <iframe id="data1" src="{:url('market/data1',array('currency_id'=>$currency['currency_id']))}" width="100%" height="158px" style="border: none;"></iframe>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        //操作iframe父级元素
+        var select = $("select[name='currency_id']",parent.document);
+        var iframe_sell = $("iframe",parent.document);
+        select.change(function(event){
+            var cid = $(this).val();
+            $("#deta").remove();
+            $("#data1").remove();
+            iframe_sell.attr('src',"/portal/market/sell_out/currency_id/"+cid);
+        })
+    })
+</script>

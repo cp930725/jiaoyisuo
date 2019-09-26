@@ -1,0 +1,65 @@
+	<div class="nav" id="nav">
+        <ul>
+            <li class="{$Request.path == 'index'  || $Request.path == '' ? ' active1' : ''}" onclick="javascript:window.location.href='{:url('index/index')}'">
+                <i class="fa fa-line-chart "></i><br>行情
+            </li>
+            <li class="{$Request.path == 'market'  ? ' active1' : ''}" onclick="javascript:window.location.href='{:url('market/index')}'">
+                <i class="fa fa-random "></i><br>交易
+            </li>
+            <li class="{$Request.path == 'otc' || $Request.path == 'otc/otcadd' ? ' active1' : ''}" onclick="javascript:window.location.href='{:url('otc/index')}'">
+                <i class="fa fa-refresh "></i><br>OTC
+            </li>
+            <li class="{$Request.path == 'finance' ? ' active1' : ''}" onclick="javascript:window.location.href='{:url('finance/index')}'">
+                <i class="fa fa-cny  "></i><br>财富
+            </li>
+            <li class="{$Request.path == 'my' ? ' active1' : ''}" onclick="javascript:window.location.href='{:url('my/user')}'">
+                <i class="fa fa-user "></i><br>我的
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    var teb = new Vue({
+        el: '#app',
+        data: {
+            cur: '0'
+
+        }
+    })
+    </script>
+    <script>
+    $(".nav ul").on("click", "li", function() {
+        $(".nav ul li").removeClass("active1");
+        $(this).addClass("active1");
+    });
+    // setInterval(function() {
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: "{:url('otc/placeorder')}",
+    //         dataType: 'json',
+    //         error: function() {
+    //             alert('系统错误！请联系管理员！');
+    //         },
+    //         success: function(data) {
+    //             if (data.state == 300) {
+    //                 if (confirm(data.info)) {
+    //                      window.location.href = '{:url("my/orderinfo")}?order_no=' + data.order_no + '&&type=sell';
+    //                      return;
+    //                 }
+
+    //             }
+    //             if (data.state == 200) {
+    //                 if (confirm(data.info)) {
+    //                     window.location.href = '{:url("my/myorder")}';
+    //                     return;
+    //                 }
+    //             }
+    //             //####没有订单的情况（20190920，可删）####
+    //             if (data.state == 204){
+    //                 return;
+    //             }
+    //             //####没有订单的情况（20190920，可删）####
+    //         }
+    //     });
+    //     // alert(123);
+    // }, 10000);
+    </script>

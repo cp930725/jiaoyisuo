@@ -1,0 +1,60 @@
+<include file="public@header" />
+<title>交易</title>
+<link rel="stylesheet" href="__TMPL__/public/css/transaction.css">
+<body>
+    <div id="aa">
+        <div class="header">
+            <div class="header-btn">
+                <button class="bb" @click="top='0'" :class="{active:top=='0'}">币币交易</button>
+                <button class="gg" @click="top='1'" :class="{active:top=='1'}">杠杆交易</button>
+            </div>
+        </div>
+        <!-- con -->
+        <div class="con">
+            <div class="con-title">
+                <div class="title-text">
+                    <h3>
+                        <select name="currency_id">
+                            <volist name="currency" id="vo"><!--currency_mark为交易对象，ct_mark是作为交易工具-->
+                                <option value="{$vo.currency_id}">{$vo.currency_mark}/{$vo.ct_mark?$vo.ct_mark:'CNY'}</option>
+                            </volist>
+                        </select> 
+                        <!-- &nbsp;<i class="fa fa-caret-down"></i> -->
+                    </h3>&nbsp;&nbsp;
+                    <p>eos</p>
+                </div>
+                <div class="title-icon">
+                    <a href=""><i class="fa fa-line-chart fa-lg"></i></a> &nbsp;&nbsp;&nbsp;
+                    <a href=""><i class="fa fa-ellipsis-h fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="con-teb">
+                <ul>
+                    <li class="purchase"><a href="{:url('market/purchase',array('currency_id'=>$currency[0]['currency_id']))}" target="iframe">1</a></li>
+                    <li class="sell-out"><a href="{:url('market/sell_out',array('currency_id'=>$currency[0]['currency_id']))}" target="iframe">2</a></li>
+                    <li class="current"><a href="{:url('market/current',array('currency_id'=>$currency[0]['currency_id']))}" target="iframe">3</a></li>
+                    <li class="whole"><a href="{:url('market/whole',array('currency_id'=>$currency[0]['currency_id']))}" target="iframe">4</a></li>
+                </ul>
+                <div class="con-con">
+                    <iframe src="{:url('market/purchase',array('currency_id'=>$currency[0]['currency_id']))}" scrolling="auto" rameborder="0" name="iframe" width="100%" height="530px"></iframe>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <include file="public@footer" />
+</body>
+</html>
+<script>
+    var top = new Vue({
+        el: '#aa',
+        data: {
+            top: '0'
+        }
+    });
+</script>
+<!-- <script>
+    $(".header-btn").on("click", "button", function() {
+        $(".header-btn button").removeClass("active");
+        $(this).addClass("active");
+    });
+</script> -->

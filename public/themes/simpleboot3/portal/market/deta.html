@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul{
+			list-style-type: none
+		}
+		li{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 2px;
+		}
+		li p{
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<empty name="deta">
+			该币种暂无买入记录
+		<else/>
+			<volist name="deta" id="vo">
+				<li><p style="color: #41d092;">{$vo.total_price}</p><p style="color: #a2a4a3;">{$vo.num}</p></li>
+			</volist>
+		</empty>
+	</ul>
+</body>
+</html>
