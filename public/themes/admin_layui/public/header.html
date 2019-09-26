@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>交易所后台管理系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="__TMPL__/public/static/css/layui.css" media="all">
+    <link rel="stylesheet" href="__TMPL__/public/static/css/admin.css" media="all">
+
+    <script>
+        //全局变量
+        var GV = {
+            HOST: "{$_SERVER['HTTP_HOST']|default=''}",
+            ROOT: "__ROOT__/",
+            WEB_ROOT: "__WEB_ROOT__/",
+            JS_ROOT: "__TMPL__/public/static/js/"
+        };
+    </script>
+    <if condition="APP_DEBUG">
+        <style>
+            #think_page_trace_open {
+                left: 0 !important;
+                right: initial !important;
+            }
+        </style>
+    </if>
