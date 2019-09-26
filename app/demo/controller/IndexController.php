@@ -17,11 +17,11 @@ class IndexController extends HomeBaseController
 {
     public function index()
     {
-        return $this->fetch(':index');
+    	dump(21123);
     }
 
     public function ws()
     {
-        return $this->fetch(':ws');
+    	dump(5665645);
     }
 }
